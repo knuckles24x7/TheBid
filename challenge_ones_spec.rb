@@ -13,11 +13,11 @@ describe "Accepted bids" do
   end
 
   it "should be zero when no bids are given" do
-  	bids.accept_bids("", 10).size.should eq(0)
+  	bids.accept_bids(nil, 10).size.should eq(0)
   end
 
   it "should be zero when no servers are given" do
-  	bids.accept_bids("10,9,8,7,6,5", "").size.should eq(0)
+  	bids.accept_bids("10,9,8,7,6,5", nil).size.should eq(0)
   end  
 
   it "should be zero when the number of servers given is less than one" do
