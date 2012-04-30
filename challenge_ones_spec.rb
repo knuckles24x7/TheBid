@@ -4,8 +4,16 @@ require "./bids"
 describe "Accepted bids" do
   bids = Bids.new
 
+  it "should be one" do
+    bids.accept_bids("100, 49, 11, 9, 5, 2", 4).size.should eq(1)    
+  end
+
   it "should be two" do
     bids.accept_bids("100,50,11,9,5,2", 4).size.should eq(2)	
+  end
+
+  it "should be four" do
+    bids.accept_bids("100,80,70,65,50,45,5,2", 4).size.should eq(4)  
   end
 
   it "price point should be 50" do
